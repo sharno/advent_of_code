@@ -6,28 +6,26 @@ import (
 	"strings"
 )
 
-type void struct{}
-
 func day3() {
 	bytes, _ := os.ReadFile("day3.txt")
 	lines := strings.Split(string(bytes), "\n")
 
-  // part 1
+	// part 1
 	sum := 0
 	for _, line := range lines {
 		sum += day3Item([]string{line[:len(line)/2], line[len(line)/2:]})
 	}
 	fmt.Println(sum)
 
-  // part 2
+	// part 2
 	groups := [][]string{}
-  group := []string{}
+	group := []string{}
 	for _, line := range lines {
 		group = append(group, line)
-    if len(group) == 3 {
-      groups = append(groups, group)
-      group = []string{}
-    }
+		if len(group) == 3 {
+			groups = append(groups, group)
+			group = []string{}
+		}
 	}
 
 	sum = 0

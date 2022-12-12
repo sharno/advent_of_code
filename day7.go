@@ -26,7 +26,7 @@ func day7() {
 			currentDirName := strings.Join(currentDir, "/")
 			fileName := currentDirName + sizeName[1]
 			fileSize, _ := strconv.Atoi(sizeName[0])
-			for i, _ := range currentDir {
+			for i := range currentDir {
 				dir := strings.Join(currentDir[0:i+1], "/")
 				files := fs[dir]
 				if files == nil {

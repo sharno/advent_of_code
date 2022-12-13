@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"math"
 	"os"
 	"strconv"
 	"strings"
@@ -13,7 +14,7 @@ func day10() {
 
 	cycle := 1
 	register := 1
-	cycles := []int{20, 60, 100, 140, 180, 220, 9999999999}
+	cycles := []int{20, 60, 100, 140, 180, 220, math.MaxInt}
 	crt := []rune{}
 	signalSum := 0
 	for _, line := range lines {
